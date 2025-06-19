@@ -6,6 +6,9 @@ $("document").ready(function () {
 function initRecruiterComponent() {
   let toggles = document.querySelectorAll("[data-recruiter-toggle]");
   const recruiterComponent = document.querySelector(".content-main_recruiter.sticky-recruiter");
+  const colorElement = document.querySelector(".color-code");
+  const hexColor = colorElement.textContent.trim();
+  console.log(hexColor);
 
   // Check if mobile
   if (window.innerWidth < 768) {
