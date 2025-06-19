@@ -1,0 +1,75 @@
+:root {
+  --default-ease: cubic-bezier(0.81, -0.01, 0.15, 1);
+}
+
+/* ---- Sticky Recruiter ---- */
+
+@media (max-width: 768px) {
+  /* Default state */
+  .content-main_recruiter.sticky-recruiter {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 0.3s var(--default-ease);
+    height: auto;
+  }
+
+  .content-main_recruiter.sticky-recruiter.visible {
+    visibility: visible;
+  }
+
+  /* Collapsed state */
+  .content-main_recruiter.sticky-recruiter[collapsed] .recruiter_button-group,
+  .content-main_recruiter.sticky-recruiter[collapsed] .recruiter_top {
+    visibility: hidden;
+    display: none;
+  }
+
+  .content-main_recruiter.sticky-recruiter[collapsed] .recruiter_toggle {
+    display: block;
+  }
+
+  .content-main_recruiter.sticky-recruiter[collapsed] {
+    height: auto !important;
+    width: max-content !important;
+    inset: auto 2rem 0rem auto !important;
+    border-radius: 0.5rem 0.5rem 0 0;
+  }
+
+  .content-main_recruiter.sticky-recruiter.visible {
+    opacity: 1;
+    transform: translateY(0rem);
+  }
+
+  .content-main_recruiter.sticky-recruiter[collapsed] .recruiter_toggle {
+    padding: 0.5rem;
+    visibility: visible;
+  }
+
+  .content-main_recruiter.sticky-recruiter[collapsed] .recruiter_collapse {
+    visibility: hidden;
+  }
+
+  .content-main_recruiter.sticky-recruiter .recruiter_toggle {
+    visibility: hidden;
+  }
+}
+
+/* ---- Stappen Slider ---- */
+.swiper-button.swiper-button-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.swiper-button {
+  cursor: pointer;
+  transition: transform 0.3s var(--default-ease), opacity 0.3s var(--default-ease);
+}
+
+.swiper-button:hover {
+  transform: scale(0.9)
+}
+
+.swiper-button.swiper-button-disabled:hover {
+  transform: scale(1);
+}
